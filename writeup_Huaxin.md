@@ -176,22 +176,22 @@ After several test above, I found the best architecture is 3 convolution layer, 
 
 If a well known architecture was chosen:
 
-1. What architecture was chosen?
+* What architecture was chosen?
     I chose 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
-2. Why did you believe it would be relevant to the traffic sign application?
-    1. I think that traffic sign is not like handwrite number classification, in order to identify traffic sign, the model need three level to process:
+* Why did you believe it would be relevant to the traffic sign application?
+    I think that traffic sign is not like handwrite number classification, in order to identify traffic sign, the model need three level to process:
         1. Identify different basic angle or line.
         2. Collect the basic element into various shape groups or number groups. 
         3. According to the different shape or number's combination, to judge the class of sign.  
        So two convolution or two full connect layer is not enough for traffic sign classification.
 
-    2. After above real test, I confirm my assumption.
 
 ####6. How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-    After change the architecture of model, the accuracy has obvious improvement in both of training, validation and test stage. However, as mention before, the accuracy of new image which I use from Internet is decrease. 
 
-    I think the possible reason is that the new image's sign relative size is different from training data set. Specifically, in the training dataset, the sign's size is around 12x12, but in the new image, the sign's size is around 20x20. After upgrade the model architecture, when classify the new image, the model become a little overfitting with the training data.  
+After change the architecture of model, the accuracy has obvious improvement in both of training, validation and test stage. However, as mention before, the accuracy of new image which I use from Internet is decrease. 
+
+I think the possible reason is that the new image's sign relative size is different from training data set. Specifically, in the training dataset, the sign's size is around 12x12, but in the new image, the sign's size is around 20x20. After upgrade the model architecture, when classify the new image, the model become a little overfitting with the training data.  
 
 ###Test a Model on New Images
 
