@@ -124,33 +124,33 @@ If an iterative approach was chosen:
 * How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
 
 Test different structure with different layer:
-1. LeNet structure: 2 convolution layer, 2 fully connected layer:
-     a) rate = 0.0015, epoch = 35, the final valid accuracy is 93.5%
-     b) rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
-     c) rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
-2. LeNet structure: 2 convolution layer, 1 fully connected layer:
-     a) rate = 0.0015, epoch = 35, the final valid accuracy is 92.2%
-     b) rate = 0.0010, epoch = 35, the final valid accuracy is 92.3%
-     c) rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
-3. LeNet structure: 2 convolution layer, 3 fully connected layer:
-     a) rate = 0.0015, epoch = 35, the final valid accuracy is 92.7%
-     b) rate = 0.0010, epoch = 35, the final valid accuracy is 93.8%
-     c) rate = 0.0005, epoch = 35, the final valid accuracy is 90.6%
+* LeNet structure: 2 convolution layer, 2 fully connected layer:
+     1. rate = 0.0015, epoch = 35, the final valid accuracy is 93.5%
+     2. rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
+     3. rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
+* LeNet structure: 2 convolution layer, 1 fully connected layer:
+     1. rate = 0.0015, epoch = 35, the final valid accuracy is 92.2%
+     2. rate = 0.0010, epoch = 35, the final valid accuracy is 92.3%
+     3. rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
+* LeNet structure: 2 convolution layer, 3 fully connected layer:
+     1. rate = 0.0015, epoch = 35, the final valid accuracy is 92.7%
+     2. rate = 0.0010, epoch = 35, the final valid accuracy is 93.8%
+     3. rate = 0.0005, epoch = 35, the final valid accuracy is 90.6%
    In this structure, the average of all epoch is obvious higher than first two structure.
-4. LeNet structure: 1 convolution layer, 2 fully connected layer:
-     a) rate = 0.0015, epoch = 35, the final valid accuracy is 88.9%
-     b) rate = 0.0010, epoch = 35, the final valid accuracy is 89.5%
-     c) rate = 0.0005, epoch = 35, the final valid accuracy is 88.9%
-5. LeNet structure: 3 convolution layer, 2 fully connected layer:
-     a) rate = 0.0015, epoch = 35, the final valid accuracy is 95.0%
-     b) rate = 0.0010, epoch = 35, the final valid accuracy is 93.7%
-     c) rate = 0.0005, epoch = 35, the final valid accuracy is 91.5%
-6. LeNet structure: 3 convolution layer, 3 fully connected layer:
-     a) rate = 0.0015, epoch = 35, the final valid accuracy is 94.1%
-     b) rate = 0.0010, epoch = 35, the final valid accuracy is 95.6%
-     c) rate = 0.0005, epoch = 35, the final valid accuracy is 91.6%
+* LeNet structure: 1 convolution layer, 2 fully connected layer:
+     1. rate = 0.0015, epoch = 35, the final valid accuracy is 88.9%
+     2. rate = 0.0010, epoch = 35, the final valid accuracy is 89.5%
+     3. rate = 0.0005, epoch = 35, the final valid accuracy is 88.9%
+* LeNet structure: 3 convolution layer, 2 fully connected layer:
+     1. rate = 0.0015, epoch = 35, the final valid accuracy is 95.0%
+     2. rate = 0.0010, epoch = 35, the final valid accuracy is 93.7%
+     3. rate = 0.0005, epoch = 35, the final valid accuracy is 91.5%
+* LeNet structure: 3 convolution layer, 3 fully connected layer:
+     1. rate = 0.0015, epoch = 35, the final valid accuracy is 94.1%
+     2. rate = 0.0010, epoch = 35, the final valid accuracy is 95.6%
+     3. rate = 0.0005, epoch = 35, the final valid accuracy is 91.6%
 
-According to valid accuracy and test accuracy, the best architecture is 3 convolution layer, 3 fully connected layer with 0.010 learning rate and 35 epoch. However, I found the accuracy of new image classification decrease with this structure.
+* According to valid accuracy and test accuracy, the best architecture is 3 convolution layer, 3 fully connected layer with 0.010 learning rate and 35 epoch. However, I found the accuracy of new image classification decrease with this structure.
 
 Then choose the best one of the test above, and change the pooling function and activation:
 1. Original LeNet structure: change max pooling to average pooling:
