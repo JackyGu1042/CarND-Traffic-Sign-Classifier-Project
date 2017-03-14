@@ -210,8 +210,8 @@ I think the possible reason is that the new image's sign relative size is differ
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+1.![alt text][image4] 2.![alt text][image5] 3.![alt text][image6] 
+4.![alt text][image7] 5.![alt text][image8]
 
 * The 1st to 4th the size is bigger than original training dataset
 * The 5th is the different color and size with original training dataset
