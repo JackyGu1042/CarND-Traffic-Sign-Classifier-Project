@@ -13,17 +13,14 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-[https://github.com/JackyGu1042/German-traffic-sign-classifier.git]: # (Image References)
+[https://github.com/JackyGu1042/German-traffic-sign-classifier.git/]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./stop.jpg "Traffic Sign 1"
-[image5]: ./30.jpg "Traffic Sign 2"
-[image6]: ./60.jpg "Traffic Sign 3"
-[image7]: ./Kindergarten.jpg "Traffic Sign 4"
-[image8]: ./Turn_right_ahead.jpg "Traffic Sign 5"
-[image9]: ./50.jpg "Traffic Sign 6"
+[image4]: ./Stop_o.jpg "Traffic Sign 1"
+[image5]: ./30_o.jpg "Traffic Sign 2"
+[image6]: ./60_o.jpg "Traffic Sign 3"
+[image7]: ./Kindergarten_o.jpg "Traffic Sign 4"
+[image8]: ./Turn_right_ahead_o.jpg "Traffic Sign 5"
+[image9]: ./50_o.jpg "Traffic Sign 6"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
