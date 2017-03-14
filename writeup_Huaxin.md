@@ -92,10 +92,6 @@ My final model consisted of the following layers:
 | Fully connected		| outputz 84 									|
 | RELU6					|												|
 | Fully connected		| outputz n_classes								|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
 
 
 ####4. Trained model
