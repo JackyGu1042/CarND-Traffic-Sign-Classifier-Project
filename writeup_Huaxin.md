@@ -44,24 +44,25 @@ The code for this step is contained in the 3rd code cell of the IPython notebook
 ####1. Preprocessed the image data
 The code for this step is contained in the 5th code cell of the IPython notebook.
 
-1.I use skimage library's color.rgb2gray function to realize this feature. And I normalized the image by just divide 255, because smaller value could reduce the operation error of computer.
+1. I use skimage library's color.rgb2gray function to realize this feature. And I normalized the image by just divide 255, because smaller value could reduce the operation error of computer.
 
 2. I have tried two different preprocession:
-    A. LeNet structure: remain the input as (32, 32, 3) RGB image
-         a) rate = 0.0020, epoch = 35, the final valid accuracy is 84.8%
-         b) rate = 0.0015, epoch = 35, the final valid accuracy is 90.8% 
-         c) rate = 0.0010, epoch = 35, the final valid accuracy is 88.4% 
-         d) rate = 0.0005, epoch = 35, the final valid accuracy is.89.8%
-    B. LeNet structure: color to grayscale preprocession
-         a) rate = 0.0020, epoch = 35, the final valid accuracy is 92.6%
-         b) rate = 0.0015, epoch = 35, the final valid accuracy is 93.5%
-         c) rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
-         d) rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
+    * LeNet structure: remain the input as (32, 32, 3) RGB image
+         a. rate = 0.0020, epoch = 35, the final valid accuracy is 84.8%
+         b. rate = 0.0015, epoch = 35, the final valid accuracy is 90.8% 
+         c. rate = 0.0010, epoch = 35, the final valid accuracy is 88.4% 
+         d. rate = 0.0005, epoch = 35, the final valid accuracy is.89.8%
+    * LeNet structure: color to grayscale preprocession
+         a. rate = 0.0020, epoch = 35, the final valid accuracy is 92.6%
+         b. rate = 0.0015, epoch = 35, the final valid accuracy is 93.5%
+         c. rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
+         d. rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
+         
 After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And because decrease the dimension from 32x32x3 to 32x32x1, the training time also decrease.         
          
 3. So finally, I keep the color to grayscale as the preprocession, and one more reason is that after read the image of dataset I found the biggest difference between each traffic signs is not color but shape. So remove the color information could increase the efficiency of classification.
 
-4.In the 6th cell, it also prints out an example of a traffic sign image after grayscaling.
+4. In the 6th cell, it also prints out an example of a traffic sign image after grayscaling.
 
 ####2. Set up training, validation and testing data  
 1. Follow the original dataset, use train.p as training set and valid.p as validation set, and test.p as test set.
