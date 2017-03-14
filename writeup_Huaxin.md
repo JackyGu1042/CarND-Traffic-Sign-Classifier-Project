@@ -176,11 +176,11 @@ After several test above, I found the best architecture is 3 convolution layer, 
 
 If a well known architecture was chosen:
 
-* What architecture was chosen?
+#####1. What architecture was chosen?
     
 I chose 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
-* Why did you believe it would be relevant to the traffic sign application?
+#####2. Why did you believe it would be relevant to the traffic sign application?
 
 I think that traffic sign is not like handwrite number classification, in order to identify traffic sign, the model need three level to process:
     1. Identify different basic angle or line.
