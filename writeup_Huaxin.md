@@ -44,9 +44,9 @@ The code for this step is contained in the 3rd code cell of the IPython notebook
 ####1. Preprocessed the image data
 The code for this step is contained in the 5th code cell of the IPython notebook.
 
-* I use skimage library's color.rgb2gray function to realize this feature. And I normalized the image by just divide 255, because smaller value could reduce the operation error of computer.
+I use skimage library's color.rgb2gray function to realize this feature. And I normalized the image by just divide 255, because smaller value could reduce the operation error of computer.
 
-* I have tried two different preprocession:
+I have tried two different preprocession:
 * LeNet structure: remain the input as (32, 32, 3) RGB image
     1. rate = 0.0020, epoch = 35, the final valid accuracy is 84.8%
     2. rate = 0.0015, epoch = 35, the final valid accuracy is 90.8% 
@@ -60,9 +60,9 @@ The code for this step is contained in the 5th code cell of the IPython notebook
          
 After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And because decrease the dimension from 32x32x3 to 32x32x1, the training time also decrease.         
          
-* So finally, I keep the color to grayscale as the preprocession, and one more reason is that after read the image of dataset I found the biggest difference between each traffic signs is not color but shape. So remove the color information could increase the efficiency of classification.
+So finally, I keep the color to grayscale as the preprocession, and one more reason is that after read the image of dataset I found the biggest difference between each traffic signs is not color but shape. So remove the color information could increase the efficiency of classification.
 
-* In the 6th cell, it also prints out an example of a traffic sign image after grayscaling.
+In the 6th cell, it also prints out an example of a traffic sign image after grayscaling.
 
 ####2. Set up training, validation and testing data  
 * Follow the original dataset, use train.p as training set and valid.p as validation set, and test.p as test set.
@@ -176,8 +176,6 @@ After several test above, I found the best architecture is 3 convolution layer, 
 
 ####5. What are some of the important design choices and why were they chosen? 
 
-If a well known architecture was chosen:
-
 #####1. What architecture was chosen?
     
 I chose 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
@@ -201,6 +199,8 @@ I think the possible reason is that the new image's sign relative size is differ
 ###Test a Model on New Images
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+
+![alt tag](https://github.com/JackyGu1042/German-traffic-sign-classifier.git/50.jpg)
 
 Here are five German traffic signs that I found on the web:
 
