@@ -66,7 +66,7 @@ I have tried two different preprocession:
     3. rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
     4. rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
          
-After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And because decrease the dimension from 32x32x3 to 32x32x1, the training time also decrease.         
+After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And the training time also decreases, because decrease the dimension from 32x32x3 to 32x32x1.         
          
 So finally, I keep the color to grayscale as the preprocession, and one more reason is that after read the image of dataset I found the biggest difference between each traffic signs is not color but shape. So remove the color information could increase the efficiency of classification.
 
@@ -239,7 +239,7 @@ The model was able to correctly guess 5 of the 6 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-* For the 1st image, the model is relatively sure that this is a 50 km/h sign. The top five soft max probabilities were
+* For the 1st image, the model is relatively sure that this is a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -249,7 +249,7 @@ The code for making predictions on my final model is located in the 11th cell of
 | 1.42e-08	   			| No vehicles					 				|
 | 1.15e-08			    | Speed limit (30km/h) 							| 
 
-* For the 2nd image, the model is relatively sure that this is a stop sign. The top five soft max probabilities were
+* For the 2nd image, the model is relatively sure that this is a 30 km/h sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -260,7 +260,7 @@ The code for making predictions on my final model is located in the 11th cell of
 | 1.15e-08			    | Speed limit (70km/h) 							|
 
 
-* For the 3rd image, the model is relatively sure that this is a 30 km/h sign. The top five soft max probabilities were
+* For the 3rd image, the model is relatively sure that this is a 60 km/h sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -270,7 +270,7 @@ The code for making predictions on my final model is located in the 11th cell of
 | 2.63e-05	   			| Speed limit (30km/h)			 				|
 | 1.83e-05			    | Keep right        							| 
 
-* For the 4th image, the model is relatively sure that this is a 60 km/h sign. The top five soft max probabilities were
+* For the 4th image, the model is relatively sure that this is a Children crossing sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -280,7 +280,7 @@ The code for making predictions on my final model is located in the 11th cell of
 | 1.13e-08	   			| Keep right					 				|
 | 2.74e-09			    | No passing         							| 
 
-* For the 5th image, the model is relatively sure that this is a Children crossing sign. The top five soft max probabilities were
+* For the 5th image, the model is relatively sure that this is a turn right ahead sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -290,7 +290,7 @@ The code for making predictions on my final model is located in the 11th cell of
 | 3.65e-09	   			| Ahead only					 				|
 | 8.25e-10			    | Go straight or left  							| 
 
-* For the 6th image, the model is relatively sure that this is a turn right ahead sign. The top five soft max probabilities were
+* For the 6th image, the model is relatively sure that this is a No entry sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
