@@ -47,27 +47,27 @@ The code for this step is contained in the 5th code cell of the IPython notebook
 1. I use skimage library's color.rgb2gray function to realize this feature. And I normalized the image by just divide 255, because smaller value could reduce the operation error of computer.
 
 2. I have tried two different preprocession:
-    * LeNet structure: remain the input as (32, 32, 3) RGB image
-         1. rate = 0.0020, epoch = 35, the final valid accuracy is 84.8%
-         2. rate = 0.0015, epoch = 35, the final valid accuracy is 90.8% 
-         3. rate = 0.0010, epoch = 35, the final valid accuracy is 88.4% 
-         4. rate = 0.0005, epoch = 35, the final valid accuracy is.89.8%
-    * LeNet structure: color to grayscale preprocession
-         1. rate = 0.0020, epoch = 35, the final valid accuracy is 92.6%
-         2. rate = 0.0015, epoch = 35, the final valid accuracy is 93.5%
-         3. rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
-         4. rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
+* LeNet structure: remain the input as (32, 32, 3) RGB image
+    1. rate = 0.0020, epoch = 35, the final valid accuracy is 84.8%
+    2. rate = 0.0015, epoch = 35, the final valid accuracy is 90.8% 
+    3. rate = 0.0010, epoch = 35, the final valid accuracy is 88.4% 
+    4. rate = 0.0005, epoch = 35, the final valid accuracy is.89.8%
+* LeNet structure: color to grayscale preprocession
+    1. rate = 0.0020, epoch = 35, the final valid accuracy is 92.6%
+    2. rate = 0.0015, epoch = 35, the final valid accuracy is 93.5%
+    3. rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
+    4. rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
          
-    * After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And because decrease the dimension from 32x32x3 to 32x32x1, the training time also decrease.         
+After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And because decrease the dimension from 32x32x3 to 32x32x1, the training time also decrease.         
          
 3. So finally, I keep the color to grayscale as the preprocession, and one more reason is that after read the image of dataset I found the biggest difference between each traffic signs is not color but shape. So remove the color information could increase the efficiency of classification.
 
 4. In the 6th cell, it also prints out an example of a traffic sign image after grayscaling.
 
 ####2. Set up training, validation and testing data  
-1. Follow the original dataset, use train.p as training set and valid.p as validation set, and test.p as test set.
+* Follow the original dataset, use train.p as training set and valid.p as validation set, and test.p as test set.
 
-2. Randomly shuffle the trianing dataset in the 6th code cell.
+* Randomly shuffle the trianing dataset in the 6th code cell.
 
 ####3. Final model architecture
 The code for my final model is located in the 7th cell of the ipython notebook. 
@@ -132,7 +132,9 @@ Test different structure with different layer:
      1. rate = 0.0015, epoch = 35, the final valid accuracy is 92.7%
      2. rate = 0.0010, epoch = 35, the final valid accuracy is 93.8%
      3. rate = 0.0005, epoch = 35, the final valid accuracy is 90.6%
-   In this structure, the average of all epoch is obvious higher than first two structure.
+
+In this structure, the average of all epoch is obvious higher than first two structure.
+
 * LeNet structure: 1 convolution layer, 2 fully connected layer:
      1. rate = 0.0015, epoch = 35, the final valid accuracy is 88.9%
      2. rate = 0.0010, epoch = 35, the final valid accuracy is 89.5%
@@ -146,19 +148,22 @@ Test different structure with different layer:
      2. rate = 0.0010, epoch = 35, the final valid accuracy is 95.6%
      3. rate = 0.0005, epoch = 35, the final valid accuracy is 91.6%
 
-* According to valid accuracy and test accuracy, the best architecture is 3 convolution layer, 3 fully connected layer with 0.010 learning rate and 35 epoch. However, I found the accuracy of new image classification decrease with this structure.
+According to valid accuracy and test accuracy, the best architecture is 3 convolution layer, 3 fully connected layer with 0.010 learning rate and 35 epoch. However, I found the accuracy of new image classification decrease with this structure.
 
 Then choose the best one of the test above, and change the pooling function and activation:
 * Original LeNet structure: change max pooling to average pooling:
      1. rate = 0.0015, epoch = 35, the final valid accuracy is 93.6%
      2. rate = 0.0010, epoch = 35, the final valid accuracy is 93.3%
      3. rate = 0.0005, epoch = 35, the final valid accuracy is 90.0%
-   According to above result, it seems that the performance become worse when change max pooling to average pooling.
+
+According to above result, it seems that the performance become worse when change max pooling to average pooling.
+
 * Original LeNet structure: change activation to relu6 function:
      1. rate = 0.0015, epoch = 35, the final valid accuracy is 95.2%
      2. rate = 0.0010, epoch = 35, the final valid accuracy is 95.1%
      3. rate = 0.0005, epoch = 35, the final valid accuracy is 92.2%
-   This result is the best one. However, the new image classification decrease again.
+
+This result is the best one. However, the new image classification decrease again.
 
 After several test above, I found the best architecture is 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
@@ -198,9 +203,9 @@ I think the possible reason is that the new image's sign relative size is differ
 
 Here are five German traffic signs that I found on the web:
 
-1. The 1st to 4th the size is bigger than original training dataset
-2. The 5th is the different color and size with original training dataset
-3. The 6th is both different color and size as training dataset, moreover, the shape of the sign is still different because of graph shooting angle. 
+* The 1st to 4th the size is bigger than original training dataset
+* The 5th is the different color and size with original training dataset
+* The 6th is both different color and size as training dataset, moreover, the shape of the sign is still different because of graph shooting angle. 
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set
 
