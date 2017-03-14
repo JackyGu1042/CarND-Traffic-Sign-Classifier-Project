@@ -13,6 +13,17 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
+[//]: # (Image References)
+
+[image1]: ./examples/visualization.jpg "Visualization"
+[image2]: ./examples/grayscale.jpg "Grayscaling"
+[image3]: ./examples/random_noise.jpg "Random Noise"
+[image4]: ./stop.jpg "Traffic Sign 1"
+[image5]: ./30.jpg "Traffic Sign 2"
+[image6]: ./60.jpg "Traffic Sign 3"
+[image7]: ./Kindergarten.jpg "Traffic Sign 4"
+[image8]: ./Turn_right_ahead.jpg "Traffic Sign 5"
+[image9]: ./50.jpg "Traffic Sign 6"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -200,9 +211,10 @@ I think the possible reason is that the new image's sign relative size is differ
 
 ####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
-![alt tag](https://github.com/JackyGu1042/German-traffic-sign-classifier.git/50.jpg)
-
 Here are five German traffic signs that I found on the web:
+
+![alt text][image4] ![alt text][image5] ![alt text][image6] 
+![alt text][image7] ![alt text][image8]
 
 * The 1st to 4th the size is bigger than original training dataset
 * The 5th is the different color and size with original training dataset
