@@ -13,7 +13,7 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-[//]: # (Image References)
+[https://github.com/JackyGu1042/German-traffic-sign-classifier.git]: # (Image References)
 
 [image1]: ./examples/visualization.jpg "Visualization"
 [image2]: ./examples/grayscale.jpg "Grayscaling"
