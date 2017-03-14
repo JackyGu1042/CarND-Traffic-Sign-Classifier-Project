@@ -102,26 +102,26 @@ My final model consisted of the following layers:
 The code for training the model is located in the 7th cell of the ipython notebook. 
 
 To train the model:
-1. The learning rate is 0.0011
-2. The Epochs is 50
-3. The Batch size is 128
+* The learning rate is 0.0011
+* The Epochs is 50
+* The Batch size is 128
 
 ####5. The approach taken for finding a solution. 
 
 The code for calculating the accuracy of the model is located in the 9th cell of the Ipython notebook.
 
-1. My final model results were:
+My final model results were:
 * validation set accuracy of 95.6% 
 * test set accuracy of 94.1%
 
 If an iterative approach was chosen:
-1. What was the first architecture that was tried and why was it chosen?
+####1. What was the first architecture that was tried and why was it chosen?
 I use LeNet structure as the initial architecture. Because this architecture is the most advanced or complex architecture which I can find in the lesson.
 
-2. What were some problems with the initial architecture?
+####2. What were some problems with the initial architecture?
 I have try to use different learning rate(from 0.0002 to 0.0012) and epoch (from 10 to 40), I found the accuracy of valid set is not easy to reach 93% for the initial architecture.
 
-3. How was the architecture adjusted and why was it adjusted? 
+####3. How was the architecture adjusted and why was it adjusted? 
 
 Test different structure with different layer:
 * LeNet structure: 2 convolution layer, 2 fully connected layer:
@@ -166,13 +166,13 @@ Then choose the best one of the test above, and change the pooling function and 
 
 After several test above, I found the best architecture is 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
-4. Which parameters were tuned? How were they adjusted and why?
+####4. Which parameters were tuned? How were they adjusted and why?
 * Number of convolution layer, when convolution increase, the accuracy become better.
 * Number of fully connected layer, when fully connected layer increase, the accuracy become better.
 * Value of learning rate, when this rate increase, the accuracy could improve fast by each epoch. But if learning is too large, the final result is also not good(I think this case is overfitting).  
 * Number of epoch, when learning rate is small, this number need to be big.  
 
-5. What are some of the important design choices and why were they chosen? 
+####5. What are some of the important design choices and why were they chosen? 
 
 If a well known architecture was chosen:
 1. What architecture was chosen?
@@ -187,7 +187,7 @@ If a well known architecture was chosen:
 
     2. After above real test, I confirm my assumption.
 
-6. How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+####6. How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
     After change the architecture of model, the accuracy has obvious improvement in both of training, validation and test stage. However, as mention before, the accuracy of new image which I use from Internet is decrease. 
 
     I think the possible reason is that the new image's sign relative size is different from training data set. Specifically, in the training dataset, the sign's size is around 12x12, but in the new image, the sign's size is around 20x20. After upgrade the model architecture, when classify the new image, the model become a little overfitting with the training data.  
