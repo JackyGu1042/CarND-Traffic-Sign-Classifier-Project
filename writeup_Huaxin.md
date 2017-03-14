@@ -36,17 +36,17 @@ signs data set:
 ####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 The code for this step is contained in the 3rd code cell of the IPython notebook.  
 
-1.I print out the basic information of dataset, like data size, shape and classes.
-2.Print out the train, valid and test dataset's bar chart for visualization in the 4th code cell.
+* I print out the basic information of dataset, like data size, shape and classes.
+* Print out the train, valid and test dataset's bar chart for visualization in the 4th code cell.
 
 ###Design and Test a Model Architecture
 
 ####1. Preprocessed the image data
 The code for this step is contained in the 5th code cell of the IPython notebook.
 
-1. I use skimage library's color.rgb2gray function to realize this feature. And I normalized the image by just divide 255, because smaller value could reduce the operation error of computer.
+* I use skimage library's color.rgb2gray function to realize this feature. And I normalized the image by just divide 255, because smaller value could reduce the operation error of computer.
 
-2. I have tried two different preprocession:
+* I have tried two different preprocession:
 * LeNet structure: remain the input as (32, 32, 3) RGB image
     1. rate = 0.0020, epoch = 35, the final valid accuracy is 84.8%
     2. rate = 0.0015, epoch = 35, the final valid accuracy is 90.8% 
@@ -60,9 +60,9 @@ The code for this step is contained in the 5th code cell of the IPython notebook
          
 After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And because decrease the dimension from 32x32x3 to 32x32x1, the training time also decrease.         
          
-3. So finally, I keep the color to grayscale as the preprocession, and one more reason is that after read the image of dataset I found the biggest difference between each traffic signs is not color but shape. So remove the color information could increase the efficiency of classification.
+* So finally, I keep the color to grayscale as the preprocession, and one more reason is that after read the image of dataset I found the biggest difference between each traffic signs is not color but shape. So remove the color information could increase the efficiency of classification.
 
-4. In the 6th cell, it also prints out an example of a traffic sign image after grayscaling.
+* In the 6th cell, it also prints out an example of a traffic sign image after grayscaling.
 
 ####2. Set up training, validation and testing data  
 * Follow the original dataset, use train.p as training set and valid.p as validation set, and test.p as test set.
@@ -71,6 +71,7 @@ After some test, I found with same model structure, learning rate and epoch, the
 
 ####3. Final model architecture
 The code for my final model is located in the 7th cell of the ipython notebook. 
+
 I use LeNet structure for model architecture, add one more convolution and one more full connected layer. And change the activation to RELU6 function.
 My final model consisted of the following layers:
 
