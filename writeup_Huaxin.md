@@ -48,17 +48,17 @@ The code for this step is contained in the 5th code cell of the IPython notebook
 
 2. I have tried two different preprocession:
     * LeNet structure: remain the input as (32, 32, 3) RGB image
-         a. rate = 0.0020, epoch = 35, the final valid accuracy is 84.8%
-         b. rate = 0.0015, epoch = 35, the final valid accuracy is 90.8% 
-         c. rate = 0.0010, epoch = 35, the final valid accuracy is 88.4% 
-         d. rate = 0.0005, epoch = 35, the final valid accuracy is.89.8%
+         1. rate = 0.0020, epoch = 35, the final valid accuracy is 84.8%
+         2. rate = 0.0015, epoch = 35, the final valid accuracy is 90.8% 
+         3. rate = 0.0010, epoch = 35, the final valid accuracy is 88.4% 
+         4. rate = 0.0005, epoch = 35, the final valid accuracy is.89.8%
     * LeNet structure: color to grayscale preprocession
-         a. rate = 0.0020, epoch = 35, the final valid accuracy is 92.6%
-         b. rate = 0.0015, epoch = 35, the final valid accuracy is 93.5%
-         c. rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
-         d. rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
+         1. rate = 0.0020, epoch = 35, the final valid accuracy is 92.6%
+         2. rate = 0.0015, epoch = 35, the final valid accuracy is 93.5%
+         3. rate = 0.0010, epoch = 35, the final valid accuracy is 90.3% 
+         4. rate = 0.0005, epoch = 35, the final valid accuracy is 90.1%
          
-After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And because decrease the dimension from 32x32x3 to 32x32x1, the training time also decrease.         
+    * After some test, I found with same model structure, learning rate and epoch, the valid accuracy is lower without color to grayscale preprocession. And because decrease the dimension from 32x32x3 to 32x32x1, the training time also decrease.         
          
 3. So finally, I keep the color to grayscale as the preprocession, and one more reason is that after read the image of dataset I found the biggest difference between each traffic signs is not color but shape. So remove the color information could increase the efficiency of classification.
 
