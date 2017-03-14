@@ -175,6 +175,7 @@ After several test above, I found the best architecture is 3 convolution layer, 
 ####5. What are some of the important design choices and why were they chosen? 
 
 If a well known architecture was chosen:
+
 1. What architecture was chosen?
     I chose 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
