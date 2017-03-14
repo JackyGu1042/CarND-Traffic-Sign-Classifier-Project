@@ -184,9 +184,9 @@ I chose 3 convolution layer, 3 fully connected layer with max pooling and relu6 
 
 I think that traffic sign is not like handwrite number classification, in order to identify traffic sign, the model need three level to process:
 
-1. Identify different basic angle or line.
-2. Collect the basic element into various shape groups or number groups. 
-3. According to the different shape or number's combination, to judge the class of sign.  
+* Identify different basic angle or line.
+* Collect the basic element into various shape groups or number groups. 
+* According to the different shape or number's combination, to judge the class of sign.  
 
 So two convolution or two full connect layer is not enough for traffic sign classification.
 
@@ -228,7 +228,7 @@ The model was able to correctly guess 5 of the 6 traffic signs, which gives an a
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
-For the 1st image, the model is relatively sure that this is a 50 km/h sign. The top five soft max probabilities were
+* For the 1st image, the model is relatively sure that this is a 50 km/h sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -238,7 +238,7 @@ For the 1st image, the model is relatively sure that this is a 50 km/h sign. The
 | 1.42e-08	   			| No vehicles					 				|
 | 1.15e-08			    | Speed limit (30km/h) 							| 
 
-For the 2nd image, the model is relatively sure that this is a stop sign. The top five soft max probabilities were
+* For the 2nd image, the model is relatively sure that this is a stop sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -249,7 +249,7 @@ For the 2nd image, the model is relatively sure that this is a stop sign. The to
 | 1.15e-08			    | Speed limit (70km/h) 							|
 
 
-For the 3rd image, the model is relatively sure that this is a 30 km/h sign. The top five soft max probabilities were
+* For the 3rd image, the model is relatively sure that this is a 30 km/h sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -259,7 +259,7 @@ For the 3rd image, the model is relatively sure that this is a 30 km/h sign. The
 | 2.63e-05	   			| Speed limit (30km/h)			 				|
 | 1.83e-05			    | Keep right        							| 
 
-For the 4th image, the model is relatively sure that this is a 60 km/h sign. The top five soft max probabilities were
+* For the 4th image, the model is relatively sure that this is a 60 km/h sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -269,7 +269,7 @@ For the 4th image, the model is relatively sure that this is a 60 km/h sign. The
 | 1.13e-08	   			| Keep right					 				|
 | 2.74e-09			    | No passing         							| 
 
-For the 5th image, the model is relatively sure that this is a Children crossing sign. The top five soft max probabilities were
+* For the 5th image, the model is relatively sure that this is a Children crossing sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
@@ -279,7 +279,7 @@ For the 5th image, the model is relatively sure that this is a Children crossing
 | 3.65e-09	   			| Ahead only					 				|
 | 8.25e-10			    | Go straight or left  							| 
 
-For the 6th image, the model is relatively sure that this is a turn right ahead sign. The top five soft max probabilities were
+* For the 6th image, the model is relatively sure that this is a turn right ahead sign. The top five soft max probabilities were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
