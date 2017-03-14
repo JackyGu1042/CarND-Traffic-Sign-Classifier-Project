@@ -110,18 +110,18 @@ To train the model:
 
 The code for calculating the accuracy of the model is located in the 9th cell of the Ipython notebook.
 
-My final model results were:
+1. My final model results were:
 * validation set accuracy of 95.6% 
 * test set accuracy of 94.1%
 
 If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-1. I use LeNet structure as the initial architecture. Because this architecture is the most advanced or complex architecture which I can find in the lesson.
+1. What was the first architecture that was tried and why was it chosen?
+I use LeNet structure as the initial architecture. Because this architecture is the most advanced or complex architecture which I can find in the lesson.
 
-* What were some problems with the initial architecture?
-1. I have try to use different learning rate(from 0.0002 to 0.0012) and epoch (from 10 to 40), I found the accuracy of valid set is not easy to reach 93% for the initial architecture.
+2. What were some problems with the initial architecture?
+I have try to use different learning rate(from 0.0002 to 0.0012) and epoch (from 10 to 40), I found the accuracy of valid set is not easy to reach 93% for the initial architecture.
 
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
+3. How was the architecture adjusted and why was it adjusted? 
 
 Test different structure with different layer:
 * LeNet structure: 2 convolution layer, 2 fully connected layer:
@@ -153,44 +153,44 @@ Test different structure with different layer:
 * According to valid accuracy and test accuracy, the best architecture is 3 convolution layer, 3 fully connected layer with 0.010 learning rate and 35 epoch. However, I found the accuracy of new image classification decrease with this structure.
 
 Then choose the best one of the test above, and change the pooling function and activation:
-1. Original LeNet structure: change max pooling to average pooling:
-     a) rate = 0.0015, epoch = 35, the final valid accuracy is 93.6%
-     b) rate = 0.0010, epoch = 35, the final valid accuracy is 93.3%
-     c) rate = 0.0005, epoch = 35, the final valid accuracy is 90.0%
+* Original LeNet structure: change max pooling to average pooling:
+     1. rate = 0.0015, epoch = 35, the final valid accuracy is 93.6%
+     2. rate = 0.0010, epoch = 35, the final valid accuracy is 93.3%
+     3. rate = 0.0005, epoch = 35, the final valid accuracy is 90.0%
    According to above result, it seems that the performance become worse when change max pooling to average pooling.
-2. Original LeNet structure: change activation to relu6 function:
-     a) rate = 0.0015, epoch = 35, the final valid accuracy is 95.2%
-     b) rate = 0.0010, epoch = 35, the final valid accuracy is 95.1%
-     c) rate = 0.0005, epoch = 35, the final valid accuracy is 92.2%
+* Original LeNet structure: change activation to relu6 function:
+     1. rate = 0.0015, epoch = 35, the final valid accuracy is 95.2%
+     2. rate = 0.0010, epoch = 35, the final valid accuracy is 95.1%
+     3. rate = 0.0005, epoch = 35, the final valid accuracy is 92.2%
    This result is the best one. However, the new image classification decrease again.
 
 After several test above, I found the best architecture is 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
-* Which parameters were tuned? How were they adjusted and why?
-1.Number of convolution layer, when convolution increase, the accuracy become better.
-2.Number of fully connected layer, when fully connected layer increase, the accuracy become better.
-3.Value of learning rate, when this rate increase, the accuracy could improve fast by each epoch. But if learning is too large, the final result is also not good(I think this case is overfitting).  
-4.Number of epoch, when learning rate is small, this number need to be big.  
+4. Which parameters were tuned? How were they adjusted and why?
+* Number of convolution layer, when convolution increase, the accuracy become better.
+* Number of fully connected layer, when fully connected layer increase, the accuracy become better.
+* Value of learning rate, when this rate increase, the accuracy could improve fast by each epoch. But if learning is too large, the final result is also not good(I think this case is overfitting).  
+* Number of epoch, when learning rate is small, this number need to be big.  
 
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+5. What are some of the important design choices and why were they chosen? 
 
 If a well known architecture was chosen:
-* What architecture was chosen?
-I chose 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
+1. What architecture was chosen?
+    I chose 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
-* Why did you believe it would be relevant to the traffic sign application?
-1. I think that traffic sign is not like handwrite number classification, in order to identify traffic sign, the model need three level to process:
-    a) Identify different basic angle or line.
-    b) Collect the basic element into various shape groups or number groups. 
-    c) According to the different shape or number's combination, to judge the class of sign.  
-   So two convolution or two full connect layer is not enough for traffic sign classification.
+2. Why did you believe it would be relevant to the traffic sign application?
+    1. I think that traffic sign is not like handwrite number classification, in order to identify traffic sign, the model need three level to process:
+        1. Identify different basic angle or line.
+        2. Collect the basic element into various shape groups or number groups. 
+        3. According to the different shape or number's combination, to judge the class of sign.  
+       So two convolution or two full connect layer is not enough for traffic sign classification.
 
-2. After above real test, I confirm my assumption.
+    2. After above real test, I confirm my assumption.
 
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-After change the architecture of model, the accuracy has obvious improvement in both of training, validation and test stage. However, as mention before, the accuracy of new image which I use from Internet is decrease. 
+6. How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+    After change the architecture of model, the accuracy has obvious improvement in both of training, validation and test stage. However, as mention before, the accuracy of new image which I use from Internet is decrease. 
 
-I think the possible reason is that the new image's sign relative size is different from training data set. Specifically, in the training dataset, the sign's size is around 12x12, but in the new image, the sign's size is around 20x20. After upgrade the model architecture, when classify the new image, the model become a little overfitting with the training data.  
+    I think the possible reason is that the new image's sign relative size is different from training data set. Specifically, in the training dataset, the sign's size is around 12x12, but in the new image, the sign's size is around 20x20. After upgrade the model architecture, when classify the new image, the model become a little overfitting with the training data.  
 
 ###Test a Model on New Images
 
