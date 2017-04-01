@@ -1,9 +1,9 @@
-#**Traffic Sign Recognition** 
+#** Traffic Sign Recognition** 
 
-##Writeup
+## Writeup
 ---
 
-**Build a Traffic Sign Recognition Project**
+** Build a Traffic Sign Recognition Project**
 
 The goals / steps of this project are the following:
 * Load the data set (see below for links to the project data set)
@@ -26,11 +26,11 @@ The goals / steps of this project are the following:
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Writeup / README
+### Writeup / README
 
-###Data Set Summary & Exploration
+### Data Set Summary & Exploration
 
-####1. Basic summary of the data set
+#### 1. Basic summary of the data set
 The code for this step is contained in the 2nd code cell of the IPython notebook.  
 
 I used the pickle library to calculate summary statistics of the traffic
@@ -41,15 +41,15 @@ signs data set:
 * The shape of a traffic sign image is (32, 32, 3)
 * The number of unique classes/labels in the data set is 43
 
-####2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
+#### 2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 The code for this step is contained in the 3rd code cell of the IPython notebook.  
 
 * I print out the basic information of dataset, like data size, shape and classes.
 * Print out the train, valid and test dataset's bar chart for visualization in the 4th code cell.
 
-###Design and Test a Model Architecture
+### Design and Test a Model Architecture
 
-####1. Preprocessed the image data
+#### 1. Preprocessed the image data
 The code for this step is contained in the 5th code cell of the IPython notebook.
 
 I use skimage library's color.rgb2gray function to realize this feature. And I normalized the image by just divide 255, because smaller value could reduce the operation error of computer.
@@ -72,12 +72,12 @@ So finally, I keep the color to grayscale as the preprocession, and one more rea
 
 In the 6th cell, it also prints out an example of a traffic sign image after grayscaling.
 
-####2. Set up training, validation and testing data  
+#### 2. Set up training, validation and testing data  
 * Follow the original dataset, use train.p as training set and valid.p as validation set, and test.p as test set.
 
 * Randomly shuffle the trianing dataset in the 6th code cell.
 
-####3. Final model architecture
+#### 3. Final model architecture
 The code for my final model is located in the 7th cell of the ipython notebook. 
 
 I use LeNet structure for model architecture, add one more convolution and one more full connected layer. And change the activation to RELU6 function.
@@ -103,7 +103,7 @@ My final model consisted of the following layers:
 | Fully connected		| outputz n_classes								|
 
 
-####4. Trained model
+#### 4. Trained model
 The code for training the model is located in the 7th cell of the ipython notebook. 
 
 To train the model:
@@ -111,7 +111,7 @@ To train the model:
 * The Epochs is 50
 * The Batch size is 128
 
-####5. The approach taken for finding a solution. 
+#### 5. The approach taken for finding a solution. 
 
 The code for calculating the accuracy of the model is located in the 9th cell of the Ipython notebook.
 
@@ -120,13 +120,13 @@ My final model results were:
 * test set accuracy of 94.1%
 
 If an iterative approach was chosen:
-####1. What was the first architecture that was tried and why was it chosen?
+#### 1. What was the first architecture that was tried and why was it chosen?
 I use LeNet structure as the initial architecture. Because this architecture is the most advanced or complex architecture which I can find in the lesson.
 
-####2. What were some problems with the initial architecture?
+#### 2. What were some problems with the initial architecture?
 I have try to use different learning rate(from 0.0002 to 0.0012) and epoch (from 10 to 40), I found the accuracy of valid set is not easy to reach 93% for the initial architecture.
 
-####3. How was the architecture adjusted and why was it adjusted? 
+#### 3. How was the architecture adjusted and why was it adjusted? 
 
 Test different structure with different layer:
 * LeNet structure: 2 convolution layer, 2 fully connected layer:
@@ -176,19 +176,19 @@ This result is the best one. However, the new image classification decrease agai
 
 After several test above, I found the best architecture is 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
-####4. Which parameters were tuned? How were they adjusted and why?
+#### 4. Which parameters were tuned? How were they adjusted and why?
 * Number of convolution layer, when convolution increase, the accuracy become better.
 * Number of fully connected layer, when fully connected layer increase, the accuracy become better.
 * Value of learning rate, when this rate increase, the accuracy could improve fast by each epoch. But if learning is too large, the final result is also not good(I think this case is overfitting).  
 * Number of epoch, when learning rate is small, this number need to be big.  
 
-####5. What are some of the important design choices and why were they chosen? 
+#### 5. What are some of the important design choices and why were they chosen? 
 
-#####1. What architecture was chosen?
+##### 1. What architecture was chosen?
     
 I chose 3 convolution layer, 3 fully connected layer with max pooling and relu6 activation.
 
-#####2. Why did you believe it would be relevant to the traffic sign application?
+##### 2. Why did you believe it would be relevant to the traffic sign application?
 
 I think that traffic sign is not like handwrite number classification, in order to identify traffic sign, the model need three level to process:
 
@@ -198,15 +198,15 @@ I think that traffic sign is not like handwrite number classification, in order 
 
 So two convolution or two full connect layer is not enough for traffic sign classification.
 
-####6. How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+#### 6. How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
 
 After change the architecture of model, the accuracy has obvious improvement in both of training, validation and test stage. However, as mention before, the accuracy of new image which I use from Internet is decrease. 
 
 I think the possible reason is that the new image's sign relative size is different from training data set. Specifically, in the training dataset, the sign's size is around 12x12, but in the new image, the sign's size is around 20x20. After upgrade the model architecture, when classify the new image, the model become a little overfitting with the training data.  
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
@@ -217,7 +217,7 @@ Here are five German traffic signs that I found on the web:
 * The 5th is the different color and size with original training dataset
 * The 6th is both different color and size as training dataset, moreover, the shape of the sign is still different because of graph shooting angle. 
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set
 
 The code for making predictions on my final model is located in the tenth cell of the Ipython notebook.
 
@@ -235,7 +235,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 83.333%. This is lower than the test set accuracy.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. 
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. 
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
